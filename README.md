@@ -10,3 +10,9 @@ WebCoseo Beta is now here, there is many features that has been included such as
 - Analysis - This tool checks over the crawled pages for backlinks, and potential websites
 - Backlinks Checker - this background tool looks over all backlinks and check to ensure they are still live and active
 - Reporting - At this moment in time we have on the dashboard the count totals statistics
+
+## How to Contribute
+We enjoy seeing other developers take part in our development process and will look forward to all who want to help build this software to be the best. Please follow the below link to get involved in our backlinks manager project as an outside developer or part of our opensource team.
+
+## Founders, Maintainers and Contributors
+Founder: Narvuk
