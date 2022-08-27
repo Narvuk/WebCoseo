@@ -1,0 +1,264 @@
+﻿<UserControl x:Class="WebCoseo.Views.Analysis.Details.Overview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:WebCoseo.Views.Analysis.Details"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Background="#f5edfa">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#e7e4eb">
+            <Border BorderBrush="#9fb0bd" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.ColumnSpan="1">
+                    <Border Background="#121a2e" BorderThickness="0,0,0,0" CornerRadius="0,0,20,0">
+                        <StackPanel Grid.Column="0" Grid.ColumnSpan="1">
+                            <Label x:Name="ViewDetails_Page_Title" Foreground="White" Content="Overview" FontWeight="Normal" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Menu Grid.Column="1" Grid.ColumnSpan="10" Height="34">
+                    <MenuItem Click="Live_Data_WindowView_Click" Header="View Live Data" Height="34" />
+                    <!-- if dropdown use code like below
+                    <MenuItem Header="Somthing" Margin="0,0,0,0" Height="34">
+                        <MenuItem Header="New34345" Height="34" Margin="0,-16,0,0" />
+                        <MenuItem Header="Open534345345" Height="34" />
+                        <MenuItem Header="Save334453453" Height="34" Margin="0,0,0,-16" />
+                    </MenuItem>
+                    -->
+                </Menu>
+                <!--
+                <Grid Grid.Column="14">
+                    <Label x:Name="crawlers_status_label" Content="Stopped" FontSize="16" FontWeight="Medium" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="DarkRed" />
+                </Grid>
+                -->
+                <Grid Grid.Column="15" Margin="0,0,5,0">
+                    <Button Click="Start_Analysis_Html_Check" x:Name="analysis_htmlcheck_start">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf802;" />
+                            <Label x:Name="cralwers_start_blabel" Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium" Content="Start" />
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#2eb51f"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7ca677"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Click="Stop_Analysis_Html_Check" x:Name="analysis_htmlcheck_stop" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf802;" />
+                            <Label x:Name="cralwers_stop_blabel" Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium" Content="Stop" />
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#db1d1d"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#91614e"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="cralwers_waiting" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf544;" />
+                            <Label x:Name="cralwers_waiting_blabel" Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium" Content="Please Wait" />
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#918a91"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#918a91"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Padding="10" Margin="16" Background="#31404a">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="Welcome_Title" FontSize="22" FontWeight="Bold" Foreground="White" Margin="0,0,0,5">Analysis Overview</TextBlock>
+                            <TextBlock x:Name="Welcome_Info" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="16" FontWeight="Medium" Foreground="White" TextWrapping="Wrap">
+                              The analysis is a part of the software to look over the data the software has collected and interact with the the crawler, You can send from here to
+                              The crawler and to your main data to track for example backlinks, add new found sites to the websites and trigger to update pages to crawl.
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="1" Grid.Column="0" Padding="5" Margin="16" Background="#6f96a6">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="ApprovedSites_Title" FontSize="16" FontWeight="Bold" Foreground="White">Approved Crawl Sites</TextBlock>
+                            <TextBlock x:Name="ApprovedSites_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf518;" />
+                    </Grid>
+                </materialDesign:Card>
+
+
+                <materialDesign:Card Grid.Row="1" Grid.Column="1" Padding="5" Margin="16" Background="DarkGreen">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="FoundSites_Title" FontSize="16" FontWeight="Bold" Foreground="White">Found Sites</TextBlock>
+                            <TextBlock x:Name="FoundSites_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf0ac;" />
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="1" Grid.Column="2" Padding="5" Margin="16" Background="Purple">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="Waiting_Scan_Title" FontSize="16" FontWeight="Bold" Foreground="White">Waiting Scan</TextBlock>
+                            <TextBlock x:Name="Waiting_Scan_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf017;" />
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="0" Padding="5" Margin="16" Background="DarkSlateBlue">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="WaitingPriority_Pages_Title" FontSize="16" FontWeight="Bold" Foreground="White">Priority Waiting Scan</TextBlock>
+                            <TextBlock x:Name="WaitingPriority_Pages_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf006;" />
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="1" Padding="5" Margin="16" Background="DarkOliveGreen">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="Scanned_Pages_Title" FontSize="16" FontWeight="Bold" Foreground="White">Scanned Pages</TextBlock>
+                            <TextBlock x:Name="Scanned_Pages_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf560;" />
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="2" Padding="5" Margin="16" Background="DarkRed">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="Excluded_Pages_Title" FontSize="16" FontWeight="Bold" Foreground="White">Excluded Pages</TextBlock>
+                            <TextBlock x:Name="Excluded_Pages_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf256;" />
+                    </Grid>
+                </materialDesign:Card>
+
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

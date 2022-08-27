@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="WebCoseo.Views.MySites.Main"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WebCoseo.Views.MySites"
+             mc:Ignorable="d" 
+             Loaded="OnLoad"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <local:Listing x:Name="Listing" Visibility="Collapsed" />
+        <local:ViewDetails x:Name="ViewDetails"  Visibility="Collapsed" />
+        <local:AddNew x:Name="AddNew" Visibility="Collapsed" />
+        <local:Edit x:Name="Edit" Visibility="Collapsed" />
+    </Grid>
+</UserControl>

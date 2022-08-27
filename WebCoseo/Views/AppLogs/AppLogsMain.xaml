@@ -1,0 +1,232 @@
+﻿<UserControl x:Class="WebCoseo.Views.AppLogs.AppLogsMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WebCoseo.Views.AppLogs"
+             mc:Ignorable="d" 
+             Loaded="OnLoad"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#0c415e">
+            <Border BorderBrush="#c8cccf" BorderThickness="0,0,0,0" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Background="#a83c11">
+                    <Label x:Name="Dashboard_Title" Foreground="White" Grid.Column="0" Content="App Logs" Grid.ColumnSpan="1" FontWeight="Bold" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+                <Button Click="Remove_All_Logs_Click" x:Name="Remove_All_Logs" Grid.Column="15" Grid.ColumnSpan="1" Margin="5,0,5,0">
+                    <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                        <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf2ed;" />
+                        <Label Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium">Remove All Logs</Label>
+                    </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#ed4a09"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#91614e"/>
+                                    <Setter Property="Foreground" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#c8cccf">
+                <Border BorderBrush="#8492a3" BorderThickness="0,1,0,1" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="80"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="AppLogs_DateFrom_Title" Grid.Column="0" Content="From" Grid.ColumnSpan="1" FontWeight="Medium" FontSize="15" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <DatePicker x:Name="AppLogs_DateFrom_Pick" Grid.Column="1" Grid.ColumnSpan="3" Background="White" />
+                    <Label x:Name="Applogs_LogsDateTo_Title" Grid.Column="4" Content="To" Grid.ColumnSpan="1" FontWeight="Medium" FontSize="15" VerticalAlignment="Center" Margin="5,0,0,0" />
+                    <DatePicker x:Name="AppLogs_DateTo_Pick" Grid.Column="5" Grid.ColumnSpan="3" Background="White"/>
+                    <ComboBox x:Name="AppLogs_Type_Pick" Grid.Column="8" Grid.ColumnSpan="3" Margin="5,0,0,0" Background="White" Height="25" FontSize="15" Padding="3,1,0,1">
+                        <ComboBoxItem Content="All" Name="All" />
+                        <ComboBoxItem Content="Information" Name="Info" />
+                        <ComboBoxItem Content="Error" Name="Error" />
+                        <ComboBoxItem Content="Warning" Name="Warning" />
+                        <ComboBoxItem Content="Debug" Name="Debug" />
+                    </ComboBox>
+                    <ComboBox x:Name="AppLogs_Section_Pick" Grid.Column="11" Grid.ColumnSpan="3" Margin="5,0,0,0" Background="White" Height="25" FontSize="15" Padding="3,1,0,1">
+                        <ComboBoxItem Content="Application" Name="Application" />
+                        <ComboBoxItem Content="Cron Tasks" Name="CronTasks" />
+                        <ComboBoxItem Content="Crawlers" Name="Crawlers" />
+                        <ComboBoxItem Content="Analysis" Name="Analysis" />
+                        <ComboBoxItem Content="Other" Name="Other" />
+                    </ComboBox>
+                    <Button Click="Search_AppLogs_Click" x:Name="AppLogs_Search_Button" Grid.Column="14" Grid.ColumnSpan="1" Margin="5,0,0,0">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf002;" />
+                            <Label Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium">Search</Label>
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#158a20"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#5e8c63"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                CornerRadius="4"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Click="Reset_Button_Click" x:Name="AppLogs_Reset_Button" Grid.Column="15" Grid.ColumnSpan="1" Margin="2,0,5,0">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf110;" />
+                            <Label Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium">Reset</Label>
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#1b64b3"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7994b0"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                CornerRadius="4"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid Grid.Column="0" x:Name="AppLogs_List" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False"
+                      IsReadOnly="True" HorizontalGridLinesBrush="#9882b0" VerticalGridLinesBrush="Transparent">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Setter Property="MinHeight" Value="34"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Date" Binding="{Binding Created, ConverterCulture=en-GB}" Width="16*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="15,0,0,0" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="12*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="15,0,0,0" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Section" Binding="{Binding Section}" Width="12*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="15,0,0,0" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Message" Binding="{Binding Message}" Width="60*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="15,0,0,0" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,168 @@
+﻿<UserControl x:Class="WebCoseo.Views.About.Details.AboutWebCoseo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:local="clr-namespace:WebCoseo.Views.About.Details"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#e7e4eb">
+            <Border BorderBrush="#9fb0bd" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.ColumnSpan="1">
+                    <Border x:Name="ViewDetails_Page_Title_BG" Background="#121a2e" BorderThickness="0,0,0,0" CornerRadius="0,0,20,0">
+                        <StackPanel Grid.Column="0" Grid.ColumnSpan="1">
+                            <Label x:Name="ViewDetails_Page_Title" Foreground="White" Content="WebCoseo" FontWeight="Normal" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+            </Grid>
+        </Grid>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1">
+                    <StackPanel>
+                        <materialDesign:Card Padding="5" Margin="16,5,16,5" Background="White">
+                            <StackPanel>
+                                <TextBlock FontSize="16" HorizontalAlignment="Center">
+                                     © 2022 Narvuk (narvuk.com)
+                                </TextBlock>
+                            </StackPanel>
+                        </materialDesign:Card>
+
+                        <materialDesign:Card Padding="5" Margin="16,5,16,5" Background="White">
+                            <StackPanel>
+                                <Label Content="WebCoseo Version" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+                                <Separator Foreground="LightGray" />
+                                <TextBlock x:Name="WebCoseo_Version_Number" FontSize="40" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </materialDesign:Card>
+                        <materialDesign:Card Padding="5" Margin="16,5,16,5" Background="White">
+                            <StackPanel>
+                                <Label Content="Release Stability" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+                                <Separator Foreground="LightGray" />
+                                <TextBlock x:Name="Release_Stability_Value" FontSize="40" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </materialDesign:Card>
+
+                        <materialDesign:Card Padding="5" Margin="16,5,16,5" Background="White">
+                            <StackPanel>
+                                <Label Content="Version Release Date" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+                                <Separator Foreground="LightGray" />
+                                <TextBlock FontSize="40" HorizontalAlignment="Center" >
+                                14 Aug 22
+                                </TextBlock>
+                            </StackPanel>
+                        </materialDesign:Card>
+
+                        <materialDesign:Card Padding="5" Margin="16,5,16,5" Background="White">
+                            <StackPanel>
+                                <Label Content="License" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+                                <Separator Foreground="LightGray" />
+                                <TextBlock FontSize="40" HorizontalAlignment="Center" >
+                                    GNU GPL V3
+                                </TextBlock>
+                            </StackPanel>
+                        </materialDesign:Card>
+
+                    </StackPanel>
+                </Grid>
+                <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
+                    <materialDesign:Card Padding="5" Margin="0,5,16,5" Background="White">
+                        <Grid>
+                            <StackPanel>
+                                <Label Content="About WebCoseo" FontSize="18" FontWeight="Bold" />
+                                <Separator Foreground="LightGray" />
+                                <TextBlock FontSize="16" Margin="5" TextWrapping="Wrap">
+                                WebCoseo has been hand crafted and developed by Narvuk and our Contributors, The software is aimed to help with backlinking
+                                and seo strategies. WebCoseo aims to take the strain out of looking for new backlinks and website partnering.
+                                
+                                <LineBreak /><LineBreak />
+                                The backlinks and Crawler/Analysis tools helps find links you have not found by looking for neighbouring websites
+                                a bit like how a search engine crawler works but giving you more control over what can be crawled and collected.
+                                
+                                <LineBreak /><LineBreak />
+                                
+                                When using WebCoseo you can do both automated collection of backlinks via the crawler as long as the approved
+                                websites are listed for the crawler and analysis tools to pick them up. You can also manual add the backlinks
+                                to the crawler to be analysed while viewing the websites as you make posts or content on third party 
+                                websites with your backlink pages.
+                                
+                                <LineBreak /><LineBreak />
+                                
+                                We are looking to implement more features as time goes on please keep an eye out for them.
+
+                                </TextBlock>
+
+
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                    <materialDesign:Card Padding="5" Margin="0,5,16,5" Background="White">
+                        <Grid>
+                            <StackPanel>
+                                <Label Content="WebCoseo software license:" FontSize="18" FontWeight="Bold" />
+                                <Separator Foreground="LightGray" />
+                                <TextBlock FontSize="16" Margin="5" TextWrapping="Wrap">                            
+                                    This program is free software and is distributed under the GNU General Public License, version 3.
+                                    In short, this means you are free to use and distribute WebCoseo for any purpose,
+                                    commercial or non-commercial, without any restrictions. You are also free to modify the program
+                                    as you wish, with the only restriction that if you distribute the modified version,
+                                    you must provide access to its source code.
+                                
+                                    <LineBreak /><LineBreak />
+                                
+                                    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+                                    For more details about the license, https://www.gnu.org/licenses/gpl-3.0.en.html.
+
+                                </TextBlock>
+
+
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </StackPanel>
+
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

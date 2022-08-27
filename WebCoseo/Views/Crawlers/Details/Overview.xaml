@@ -1,0 +1,284 @@
+﻿<UserControl x:Class="WebCoseo.Views.Crawlers.Details.Overview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:local="clr-namespace:WebCoseo.Views.Crawlers.Details"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid Background="#f5edfa">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#e7e4eb">
+            <Border BorderBrush="#9fb0bd" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.ColumnSpan="1">
+                    <Border Background="#121a2e" BorderThickness="0,0,0,0" CornerRadius="0,0,20,0">
+                        <StackPanel Grid.Column="0" Grid.ColumnSpan="1">
+                            <Label x:Name="ViewDetails_Page_Title" Foreground="White" Content="Overview" FontWeight="Normal" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Menu Grid.Column="1" Grid.ColumnSpan="10" Height="34">
+                    <MenuItem Click="Live_Data_WindowView_Click" Header="View Live Data" Height="34" />
+                    <!-- if dropdown use code like below
+                    <MenuItem Header="Somthing" Margin="0,0,0,0" Height="34">
+                        <MenuItem Header="New34345" Height="34" Margin="0,-16,0,0" />
+                        <MenuItem Header="Open534345345" Height="34" />
+                        <MenuItem Header="Save334453453" Height="34" Margin="0,0,0,-16" />
+                    </MenuItem>
+                    -->
+                </Menu>
+                <Grid Grid.Column="15" Margin="0,0,5,0">
+                    <Button Click="Start_Crawler_Service" x:Name="cralwers_start">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf544;" />
+                            <Label x:Name="cralwers_start_blabel" Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium" Content="Start" />
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#2eb51f"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#7ca677"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Click="Stop_Crawler_Service" x:Name="cralwers_stop" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf544;" />
+                            <Label x:Name="cralwers_stop_blabel" Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium" Content="Stop" />
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#db1d1d"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#91614e"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Padding="10" Margin="16" Background="#31404a">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="Welcome_Title" FontSize="22" FontWeight="Bold" Foreground="White" Margin="0,0,0,5">Crawlers Overview</TextBlock>
+                            <TextBlock x:Name="Welcome_Info" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="16" FontWeight="Medium" Foreground="White" TextWrapping="Wrap">
+                              The crawlers are your bots that will go out and process the urls that are awaiting to be crawled and scanned which will be saved.
+                              The analysis tools can look over the html for any backlinks or new websites ready to put into the pool for the crawler to scan.  
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+                
+                <materialDesign:Card Grid.Row="1" Grid.Column="0" Padding="5" Margin="16" Background="#855682">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="CrawlerPool_Title" FontSize="16" FontWeight="Bold" Foreground="White">Crawl Pool</TextBlock>
+                            <TextBlock x:Name="CrawlerPool_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf772;" />
+                    </Grid>
+                </materialDesign:Card>
+                <materialDesign:Card Grid.Row="1" Grid.Column="1" Padding="5" Margin="16" Background="DarkSlateBlue">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="CrawlerPoolPriority_Title" FontSize="16" FontWeight="Bold" Foreground="White">Priority Crawl Pool</TextBlock>
+                            <TextBlock x:Name="CrawlerPoolPriority_Count" Style="{DynamicResource MaterialDesignTitleTextBlock}" FontSize="40" FontWeight="Medium" Foreground="White"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="White" FontSize="50" FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf005;" />
+                    </Grid>
+                </materialDesign:Card>
+                
+                <!--
+                <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <materialDesign:Card Padding="10,2,2,2" Margin="16,16,16,0" Background="#31404a">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock x:Name="Currently_Crawling_Title" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,5">
+                                            Currently Crawling
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </materialDesign:Card>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <DataGrid Margin="16,0,16,0" x:Name="Crawlers_Working_List" IsHitTestVisible="False" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" IsReadOnly="True" HorizontalGridLinesBrush="#ffdede" VerticalGridLinesBrush="Transparent">
+                                <DataGrid.RowStyle>
+                                
+                                    <Style TargetType="DataGridRow">
+                -->
+                                        <!--
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsActive}" Value="False">
+                                                <Setter Property="Background" Value="#ffdede"></Setter>
+                                            </DataTrigger>
+
+                                        </Style.Triggers>
+                                        -->
+                <!--
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="2*" />
+                                    <DataGridTextColumn Header="Url" Binding="{Binding Url}" Width="20*">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style>
+                                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+
+                                    
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <materialDesign:Card Padding="10,2,2,2" Margin="16,16,16,0" Background="#31404a">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock x:Name="Currently_Waiting_Title" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,0,5">
+                                            Crawlers Waiting
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </materialDesign:Card>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <DataGrid Margin="16,0,16,10" x:Name="Crawlers_Waiting_List" IsHitTestVisible="False" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" IsReadOnly="True" HorizontalGridLinesBrush="#ffdede" VerticalGridLinesBrush="Transparent">
+                                    <DataGrid.RowStyle>
+
+                                        <Style TargetType="DataGridRow">
+                -->
+                                            <!--
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsActive}" Value="False">
+                                                <Setter Property="Background" Value="#ffdede"></Setter>
+                                            </DataTrigger>
+
+                                        </Style.Triggers>
+                                        -->
+                <!--
+                                        </Style>
+                                    </DataGrid.RowStyle>
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="2*" />
+                                        <DataGridTextColumn Header="Url" Binding="{Binding Url}" Width="20*" >
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style>
+                                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            -->
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

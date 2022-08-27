@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="WebCoseo.Views.Dashboard.ViewDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WebCoseo.Views.Dashboard"
+             xmlns:Details="clr-namespace:WebCoseo.Views.Dashboard.Details"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#0c415e">
+            <Border BorderBrush="#c8cccf" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="140" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Background="#a83c11">
+                    <Label x:Name="ViewDetails_Title" Foreground="White" Grid.Column="0" Content="Dashboard" Grid.ColumnSpan="1" FontWeight="Bold" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+                <Menu Grid.Column="1" Grid.ColumnSpan="12" Foreground="White" Height="34">
+                    <MenuItem Click="HomeMain_Overview_Click" Header="Overview" Height="34" />
+                    <MenuItem Header="Totals Stats" Height="34" >
+                        <MenuItem Click="Reports_MySitesPages_Click" Cursor="Hand" FontFamily="Segoe UI" Header="MySites Pages" Height="34" Margin="0,-16,0,0" Foreground="Black" />
+                        <MenuItem Click="Reports_Websites_Click" Cursor="Hand" Margin="0,0,0,0" FontFamily="Segoe UI" Header="Websites" Height="34" Foreground="Black" />
+                        <MenuItem Cursor="Hand" Margin="0,0,0,-16" FontFamily="Segoe UI" Header="Backlinks" Height="34" Foreground="Black">
+                            <MenuItem Click="Reports_BacklinksTotal_Click" Cursor="Hand" FontFamily="Segoe UI" Header="Total" Height="34" Margin="0,-16,0,0" Foreground="Black" />
+                            <MenuItem Click="Reports_BacklinksActiveTotal_Click" Cursor="Hand" Margin="0,0,0,0" FontFamily="Segoe UI" Header="Active" Height="34" Foreground="Black" />
+                            <MenuItem Click="Reports_BacklinksNewTotal_Click" Cursor="Hand" Margin="0,0,0,0" FontFamily="Segoe UI" Header="New" Height="34" Foreground="Black" />
+                            <MenuItem Click="Reports_BacklinksLostTotal_Click" Cursor="Hand" Margin="0,0,0,-16" FontFamily="Segoe UI" Header="Lost" Height="34" Foreground="Black" />
+                        </MenuItem>
+                    </MenuItem>
+
+
+                    <!--
+                    <MenuItem Header="Somthing" Margin="0,0,0,0" Height="34">
+                        <MenuItem Header="New34345" Height="34" Margin="0,-16,0,0" />
+                        <MenuItem Header="Open534345345" Height="34" />
+                        <MenuItem Header="Save334453453" Height="34" Margin="0,0,0,-16" />
+                    </MenuItem>
+                    -->
+                </Menu>
+
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Details:HomeMain x:Name="HomeMain" Visibility="Collapsed" />
+                <Details:ReportsMySitesPages x:Name="ReportsMySitesPages" Visibility="Collapsed" />
+                <Details:ReportsWebsites x:Name="ReportsWebsites" Visibility="Collapsed" />
+                <Details:ReportsBacklinksTotal x:Name="ReportsBacklinksTotal" Visibility="Collapsed" />
+                <Details:ReportsBacklinksActiveTotal x:Name="ReportsBacklinksActiveTotal" Visibility="Collapsed" />
+                <Details:ReportsBacklinksNewTotal x:Name="ReportsBacklinksNewTotal" Visibility="Collapsed" />
+                <Details:ReportsBacklinksLostTotal x:Name="ReportsBacklinksLostTotal" Visibility="Collapsed" />
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

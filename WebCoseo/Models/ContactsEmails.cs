@@ -1,0 +1,16 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace WebCoseo.Models
+{
+    public class ContactsEmails
+    {
+        [Key]
+        public int Id { get; set; }
+        public int? ContactId { get; set; }
+        public string? Type { get; set; }
+        public string? Email { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+    }
+}

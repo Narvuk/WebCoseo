@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="WebCoseo.Views.Settings.ViewDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WebCoseo.Views.Settings"
+             xmlns:Details="clr-namespace:WebCoseo.Views.Settings.Details"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#0c415e">
+            <Border BorderBrush="#c8cccf" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="140" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Background="#a83c11">
+                    <Label x:Name="ViewDetails_Title" Foreground="White" Grid.Column="0" Content="Settings" Grid.ColumnSpan="1" FontWeight="Bold" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+                <Menu Grid.Column="1" Grid.ColumnSpan="10" Foreground="White" Height="34">
+                    <MenuItem Click="Settings_System_Menu_Click" Header="System" Height="34" />
+                    <MenuItem Click="ApisSettings_System_Menu_Click" Header="APIs" Height="34" />
+                    <MenuItem Click="Reset_Software_Menu_Click" Header="Reset" Height="34" />
+                    <!-- Creating Sub menus example
+                    <MenuItem Header="Somthing" Margin="0,0,0,0" Height="34">
+                        <MenuItem Header="New34345" Height="34" Margin="0,-16,0,0" />
+                        <MenuItem Header="Open534345345" Height="34" />
+                        <MenuItem Header="Save334453453" Height="34" Margin="0,0,0,-16" />
+                    </MenuItem>
+                    -->
+                </Menu>
+                <!--<Button x:Name="BackToListing" Click="MS_Back_To_Listings" Grid.Column="15" Grid.ColumnSpan="1" Margin="0,0,5,0">
+                   <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                        <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf060;" />
+                        <Label Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium">Back To Listing</Label>
+                    </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#ed4a09"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#91614e"/>
+                                    <Setter Property="Foreground" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>-->
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Details:SystemSettings x:Name="SystemSettings" Visibility="Collapsed" />
+                <Details:ApisSettings x:Name="ApisSettings" Visibility="Collapsed" />                
+                <Details:ResetSoftware x:Name="ResetSoftware" Visibility="Collapsed" />
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="WebCoseo.Views.MySites.Details.BacklinkView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:local="clr-namespace:WebCoseo.Views.MySites.Details"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#f5edfa">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#e7e4eb">
+            <Border BorderBrush="#9fb0bd" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.ColumnSpan="1">
+                    <Border Background="#121a2e" BorderThickness="0,0,0,0" CornerRadius="0,0,20,0">
+                        <StackPanel Grid.Column="0" Grid.ColumnSpan="1">
+                            <Label x:Name="ViewDetails_Page_Title" Foreground="White" Content="View Backlink" FontWeight="Normal" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="15" Margin="0,0,5,0">
+                    <Button Click="View_Backlink_Url_Click" x:Name="View_Backlink_Button" Visibility="Visible">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                            <TextBlock FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf06e;" />
+                            <Label x:Name="View_Backlink_Button_Label" Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Medium" Content="View Url" />
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#855682"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#918a91"/>
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="Auto" Height="25"
+                                    CornerRadius="4"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="110" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <materialDesign:Card Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Padding="5" Margin="16,10,16,5" Background="#101f2b">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Backlink URL" FontSize="18" FontWeight="Bold" Foreground="White" />
+                            <Separator Foreground="LightGray" />
+                            <TextBox x:Name="Backlink_Url" Text="No Url" FontSize="14" FontWeight="Normal" VerticalAlignment="Center" TextWrapping="Wrap" Background="White" Padding="5" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card x:Name="Backlink_Status_Card" Grid.Row="1" Grid.Column="0" Padding="5" Margin="16,5,16,5" Background="#101f2b">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Status" FontSize="18" FontWeight="Bold" Foreground="White" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="Backlink_Status" Text="No Status" FontSize="25" FontWeight="Bold" Foreground="WhiteSmoke" Padding="5"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Padding="5" Margin="16,5,16,5" Background="White">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="MySite Page" FontSize="18" FontWeight="Bold" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="MySite_Page_Url" Text="No Description" FontSize="14" FontWeight="Normal"  TextWrapping="Wrap" Padding="5" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="0" Padding="5" Margin="16,5,16,5" Background="DarkSlateGray">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Last Checked" FontSize="18" FontWeight="Bold" Foreground="White" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="Last_Checked" Text="No Description" FontSize="20" FontWeight="Normal" Foreground="WhiteSmoke" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="1" Padding="5" Margin="16,5,16,5" Background="DarkSlateGray">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Next Check On" FontSize="18" FontWeight="Bold" Foreground="White" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="Next_Checked" Text="No Description" FontSize="20" FontWeight="Normal" Foreground="WhiteSmoke" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="2" Padding="5" Margin="16,5,16,5" Background="DarkSlateGray">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Created On" FontSize="18" FontWeight="Bold" Foreground="White" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="Date_Created" Text="No Description" FontSize="20" FontWeight="Normal" Foreground="WhiteSmoke" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Grid.Row="2" Grid.Column="3" Padding="5" Margin="16,5,16,5" Background="DarkSlateGray">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Last Updated" FontSize="18" FontWeight="Bold" Foreground="White" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="Date_Updated" Text="No Description" FontSize="20" FontWeight="Normal" Foreground="WhiteSmoke" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+                <materialDesign:Card Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Padding="5" Margin="16,5,16,5" Background="White">
+                    <Grid>
+                        <StackPanel>
+                            <Label Content="Description" FontSize="18" FontWeight="Bold" />
+                            <Separator Foreground="LightGray" />
+                            <TextBlock x:Name="Backlink_Description" Text="No Description" FontSize="16" FontWeight="Normal" Padding="5" />
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+
+
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

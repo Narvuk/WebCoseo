@@ -1,0 +1,88 @@
+﻿<Window x:Class="WebCoseo.SplashScreenWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:local="clr-namespace:WebCoseo"
+             mc:Ignorable="d" 
+             Title="WebCoseo Startup"
+             Icon="Assets/WebCoseo-Icon.ico"
+             WindowStartupLocation="CenterScreen"
+             WindowStyle="None"
+             AllowsTransparency="True"
+             Background="Transparent"   
+             Height="200"
+             Width="450">
+
+    <Border BorderBrush="#121a2e" BorderThickness="10,10,10,10" CornerRadius="8,8,8,8">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.Row="0"  MouseDown="Grid_MouseDown">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#121a2e">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <!-- Update Button -->
+                        <ColumnDefinition Width="150"/>
+                        <!-- Windows Action Buttons-->
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="35" />
+                    </Grid.ColumnDefinitions>
+                    <!-- Logo -->
+                    <Grid Grid.Row="0" Grid.Column="0" Background="#121a2e">
+                        <Border BorderBrush="#a83c11" BorderThickness="0,0,0,2" />
+                        <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
+                            <Image Source="Assets/WebCoseo-Logo.png" VerticalAlignment="Center" />
+                            <Label Padding="0" Margin="5,-2,0,0" Foreground="#ed4a09" FontWeight="Medium" FontSize="20" VerticalAlignment="Center">WebCoseo</Label>
+                            <Label Padding="0" Margin="5,-2,0,0" Foreground="White" FontWeight="Normal" FontSize="12" VerticalAlignment="Center">Beta</Label>
+                        </StackPanel>
+                    </Grid>
+                    <Border BorderBrush="#a83c11" BorderThickness="0,0,0,2" Grid.ColumnSpan="20" />
+                    
+
+
+                </Grid>
+            </Grid>
+
+            <!-- Content Main -->
+            <Grid Grid.Column="0" Grid.Row="1">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,10,10,10">
+                    <materialDesign:Card Padding="10" Margin="5" Background="#71828f">
+                        <TextBlock x:Name="Welcome_Info" Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="White" TextWrapping="Wrap">
+                                Welcome to WebCoseo, Please wait while we load up!
+                        </TextBlock>
+                    </materialDesign:Card>
+                    <ProgressBar Foreground="#a83c11" Background="#121a2e" x:Name="start_progressBar" IsIndeterminate="True" Height="10" Margin="20,10,20,0" />
+                    <TextBlock x:Name="loading_info" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Margin="0,5,0,0" Foreground="Black">Loading...</TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

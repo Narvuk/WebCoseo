@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="WebCoseo.Views.Websites.ViewDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:WebCoseo.Views.Websites"
+             xmlns:Details="clr-namespace:WebCoseo.Views.Websites.Details"
+             xmlns:Actions="clr-namespace:WebCoseo.Views.Websites.Actions"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#0c415e">
+            <Border BorderBrush="#c8cccf" BorderThickness="0,0,0,1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="140" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Background="#a83c11">
+                    <Label x:Name="ViewDetails_Title" Foreground="White" Grid.Column="0" Content="Website Details" Grid.ColumnSpan="1" FontWeight="Bold" FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+                <Menu Grid.Column="1" Grid.ColumnSpan="10" Foreground="White" Height="34">
+                    <MenuItem Click="Overview_Menu_Click" Header="Overview" Height="34" />
+                    <MenuItem Click="ViewWebSite_Menu_Click" Header="View Website" Height="34" />
+                    <MenuItem Click="Backlinks_Menu_Click" Header="Backlinks" Height="34" />
+                    <!--
+                    <MenuItem Header="Somthing" Margin="0,0,0,0" Height="34">
+                        <MenuItem Header="New34345" Height="34" Margin="0,-16,0,0" />
+                        <MenuItem Header="Open534345345" Height="34" />
+                        <MenuItem Header="Save334453453" Height="34" Margin="0,0,0,-16" />
+                    </MenuItem>
+                    -->
+                </Menu>
+                
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Details:Overview x:Name="Overview" Visibility="Collapsed" />
+                <Details:ViewWebsite x:Name="ViewWebsite" Visibility="Collapsed" />
+                <Details:Backlinks x:Name="Backlinks" Visibility="Collapsed" />
+                <Details:BacklinkView x:Name="ViewBacklink" Visibility="Collapsed" />
+                <!-- Actions -->
+                <Actions:EditBacklink x:Name="EditBacklink" Visibility="Collapsed" />
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</UserControl>
