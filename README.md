@@ -1,7 +1,7 @@
 # WebCoseo Beta
 WebCoseo Beta is now here, there is many features that has been included such as managing your websites pages to websites you will be using to track and manage backlinks to crawling for new potential websites.
 
-# Current Available Features
+## Current Available Features
 
 - MySites (Manage your websites and sites pages that will be backlinked too)
 - Websites - where you will be building links from
