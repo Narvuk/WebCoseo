@@ -12,7 +12,7 @@ WebCoseo Beta is now here, there is many features that has been included such as
 - Reporting - At this moment in time we have on the dashboard the count totals statistics
 
 ## How to Contribute
-We enjoy seeing other developers take part in our development process and will look forward to all who want to help build this software to be the best. Please follow the below link to get involved in our backlinks manager project as an outside developer or part of our opensource team.
+We enjoy seeing other developers take part in our development process and will look forward to all who want to help build this software to be the best, please reach out to us on the narvuk website.
 
 ## Founders, Maintainers and Contributors
 Founder: Narvuk
